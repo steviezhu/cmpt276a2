@@ -15,3 +15,7 @@ h1{
     width: 100px;
     height: 30px;
 }
+
+.insert_p{
+    padding-left: 200px;
+}

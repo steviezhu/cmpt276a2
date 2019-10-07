@@ -11,3 +11,9 @@ h1{
     width: 100px;
     height: 30px;
 }
+
+.p_style{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
