@@ -82,8 +82,6 @@
         $result = pg_query($conn, $query);
         echo "Trainer has been updated <br> <br>";
     }
-
-    echo "Press the button below to return to the main page <br>";
     
     pg_close($conn);
 
@@ -106,6 +104,8 @@
             window.history.back();
         }
         </script>
+
+        <p> Press the button below to return to the main page. </p>
         <button onclick="goBack()"> Main Page </button>
     </body>
 </html>

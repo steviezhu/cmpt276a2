@@ -1,22 +1,9 @@
 <?php
     $conn = pg_connect("host=localhost user=postgres password=1234 dbname=tokimon_database");
 
-    $tokiName = $_POST['tokiName'];
+    $result = pg_query($conn, "TRUNCATE tokimon_table");
 
-    $query = "SELECT name FROM tokimon_table WHERE name='$tokiName'";
-    $result = pg_query($conn, $query);
-
-    if(pg_num_rows($result) > 0){
-        echo "Tokimon exists, deleting <br> <br>";
-        $query = "DELETE FROM tokimon_table WHERE name = '$tokiName'";
-        $result = pg_query($conn, $query);
-        echo "Tokimon has been deleted <br>";
-    }
-    else{
-        echo "Tokimon does not exist. If you would like to add a new Tokimon, please use the first form on the main page! <br> <br>";
-    }
-    
-    pg_close($conn);
+    echo "Database has been cleared.";
 ?>
 
 <html>

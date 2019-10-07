@@ -17,3 +17,8 @@ h1{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
+
+.buttons{
+    width: 130px;
+    height: 36px;
+}

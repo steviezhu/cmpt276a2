@@ -26,8 +26,6 @@
         echo "Entry not inserted";
         echo "<br>";
     }
-            
-    echo "Press the button below to return to the main page <br>";
 
     pg_close($conn);
 ?>
@@ -49,6 +47,8 @@
             window.history.back();
         }
         </script>
+
+        <p> Press the button below to return to the main page. </p>
         <button onclick="goBack()"> Main Page </button>
     </body>
 </html>
