@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended:false}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('pages/index'));
+app.get('/tokimon', (req,res) => res.render('pages/tokimon'));
 app.post('/insert', (req, res) => {
   var nTokiName = req.body.tokiName;
   if(typeof req.body.tokiWeight !== 'undefined' && req.body.tokiWeight){
@@ -76,5 +77,6 @@ app.post('/insert', (req, res) => {
       res.end(error);
     }
   });
+
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
