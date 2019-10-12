@@ -78,5 +78,7 @@ app.post('/insert', (req, res) => {
     }
   });
 
+  res.render('pages/insert');
+
 });
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
