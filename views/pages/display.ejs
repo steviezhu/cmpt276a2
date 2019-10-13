@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title> Deleted Tokimon </title>
+        <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <p class="p_header">
+            Table of All Tokimon in Database Currently
+        </p>
+        
+        <p class="p_body">
+            <table class="display_table">
+            <tr>
+            <th> Name </th>
+            <th> Weight </th>
+            <th> Height </th>
+            <th> Fly </th>
+            <th> Fight </th>
+            <th> Fire </th>
+            <th> Water </th>
+            <th> Electric </th>
+            <th> Ice </th>
+            <th> Total </th>
+            <th> Trainer's Name </th>
+            <th> ID </th>
+            </tr>
+            <% resultRows.forEach((r) => { %>
+                <tr>
+                    <td> <%= r.name %> </td>
+                    <td> <%= r.weight %> </td>
+                    <td> <%= r.height %> </td>
+                    <td> <%= r.fly %> </td>
+                    <td> <%= r.fight %> </td>
+                    <td> <%= r.fire %> </td>
+                    <td> <%= r.water %> </td>
+                    <td> <%= r.electric %> </td>
+                    <td> <%= r.ice %> </td>
+                    <td> <%= r.total %> </td>
+                    <td> <%= r.trainer_name %> </td>
+                    <td> <%= r.id %> </td>
+                    <br>
+                </tr>
+            <% }); %>
+            </table>
+        </p>
+
+        <p class="p_body"> 
+            Press the button below to return to the main page. 
+        </p>
+        <button onclick="goBack()"> Main Page </button>
+
+    </body>
+</html>

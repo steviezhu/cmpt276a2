@@ -6,6 +6,11 @@
             function goBack(){
                 window.history.back();
             }
+            function uppercase(text){
+                setTimeout(function(){
+                    text.value = text.value.toUpperCase();
+                }, 1);
+            }   
         </script>
     </head>
     <body>
@@ -27,7 +32,7 @@
         </p>
 
         <form action="/update" method="POST">
-            <input type="text" name="updateID" placeholder="Tokimon's ID" class="toki_input">
+            <input type="text" name="updateID" placeholder="Tokimon's ID" class="toki_input"  onkeydown="uppercase(this)">
             <br> <br>
             <input type="submit" value="Update Tokimon" class="buttons">
         </form>

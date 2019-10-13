@@ -4,6 +4,14 @@
         <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
     </head>
 
+    <script>
+        function uppercase(text){
+            setTimeout(function(){
+                text.value = text.value.toUpperCase();
+            }, 1);
+        }
+    </script>
+
     <body>
         <h1> TokiDex </h1>
         <p class="p_header">
@@ -16,16 +24,16 @@
             If either name field is blank, they will stay blank in the database.
         </p>
         <form action="/insert" method="POST">
-            <input type="text" name="tokiName" placeholder="Tokimon's Name" class="toki_input">
-            <input type="text" name="tokiWeight" placeholder="Tokimon's Weight" class="toki_input">
-            <input type="text" name="tokiHeight" placeholder="Tokimon's Height" class="toki_input">
-            <input type="text" name="tokiFly" placeholder="Fly Power" class="toki_input">
-            <input type="text" name="tokiFight" placeholder="Fight Power" class="toki_input">
-            <input type="text" name="tokiFire" placeholder="Fire Power" class="toki_input">
-            <input type="text" name="tokiWater" placeholder="Water Power" class="toki_input">
-            <input type="text" name="tokiElectric" placeholder="Electric Power" class="toki_input">
-            <input type="text" name="tokiIce" placeholder="Ice Power" class="toki_input">
-            <input type="text" name="tokiTrainer" placeholder="Trainer's Name" class="toki_input">
+            <input type="text" name="tokiName" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiWeight" placeholder="Tokimon's Weight" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiHeight" placeholder="Tokimon's Height" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiFly" placeholder="Fly Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiFight" placeholder="Fight Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiFire" placeholder="Fire Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiWater" placeholder="Water Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiElectric" placeholder="Electric Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiIce" placeholder="Ice Power" class="toki_input" onkeydown="uppercase(this)">
+            <input type="text" name="tokiTrainer" placeholder="Trainer's Name" class="toki_input" onkeydown="uppercase(this)">
             <br> <br>
             <input type="submit" value="Insert Tokimon" class="buttons">
         </form>
@@ -40,7 +48,7 @@
             Enter the Tokimon's name and select the one you wish to update.
         </p>
         <form action="/getIDUpdate" method="POST">
-            <input type="text" name="updateTokimon" placeholder="Tokimon's Name" class="toki_input">
+            <input type="text" name="updateTokimon" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
             <br> <br>
             <input type="submit" value="Update Tokimon" class="buttons">
         </form>
@@ -55,7 +63,7 @@
             Enter the Tokimon's name and select the one you wish to delete.
         </p>
         <form action="/getIDDelete" method="POST">
-            <input type="text" name="deleteTokimon" placeholder="Tokimon's Name" class="toki_input">
+            <input type="text" name="deleteTokimon" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
             <br> <br>
             <input type="submit" value="Delete Tokimon" class="buttons">
         </form>

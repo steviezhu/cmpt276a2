@@ -223,5 +223,15 @@ app.post('/delete', (req,res) => {
   });
 })
 
+app.get('/display', (req,res) => {
+  var displayQuery = `SELECT * FROM tokimon_table`;
+  pool.query(displayQuery, (error,result) => {
+    if(error){
+      res.end(error);
+    }
+    var resultRows = result.rows;
+    res.render('pages/display', {resultRows});
+  })
+})
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
