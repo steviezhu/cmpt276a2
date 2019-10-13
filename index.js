@@ -234,4 +234,37 @@ app.get('/display', (req,res) => {
   })
 })
 
+app.post('/clear', (req,res) => {
+  var clearQuery = `TRUNCATE tokimon_table`;
+  pool.query(clearQuery, (error,result) => {
+    if(error){
+      res.end(error);
+    }
+    res.render('pages/clear');
+  })
+})
+
+app.get('/display_names', (req,res) => {
+  var displayNamesQuery = `SELECT name, id FROM tokimon_table`;
+  pool.query(displayNamesQuery, (error,result) => {
+    if(error){
+      res.end(error);
+    }
+    var resultRows = result.rows;
+    res.render('pages/displayNames', {resultRows});
+  })
+})
+
+app.get('/link', (req,res) => {
+  var specificID = req.query.id;
+  var displaySpecific = `SELECT * FROM tokimon_table where id = ${specificID}`;
+  pool.query(displaySpecific, (error,result) => {
+    if(error){
+      res.end(error);
+    }
+    var resultRows = result.rows;
+    res.render('pages/displayMore', {resultRows});
+  })
+})
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

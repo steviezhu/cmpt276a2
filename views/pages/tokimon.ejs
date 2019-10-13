@@ -23,7 +23,7 @@
             Keep in mind that if any of the numeric fields are left blank, they will default to 0.
             If either name field is blank, they will stay blank in the database.
         </p>
-        <form action="/insert" method="POST">
+        <form action="/insert" method="POST" autocomplete="off">
             <input type="text" name="tokiName" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
             <input type="text" name="tokiWeight" placeholder="Tokimon's Weight" class="toki_input" onkeydown="uppercase(this)">
             <input type="text" name="tokiHeight" placeholder="Tokimon's Height" class="toki_input" onkeydown="uppercase(this)">
@@ -38,23 +38,18 @@
             <input type="submit" value="Insert Tokimon" class="buttons">
         </form>
 
-        <p class="p_header">
+        <p class="update_header p_header">
             UPDATE TOKIMON
         </p>
 
-        <p class="p_body">
+        <p class="p_header">
+            DELETE TOKIMON
+        </p>
+
+        <p class="update_body p_body">
             Use the following form to update an existing Tokimon's attributes!
             <br>
             Enter the Tokimon's name and select the one you wish to update.
-        </p>
-        <form action="/getIDUpdate" method="POST">
-            <input type="text" name="updateTokimon" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
-            <br> <br>
-            <input type="submit" value="Update Tokimon" class="buttons">
-        </form>
-
-        <p class="p_header">
-            DELETE TOKIMON
         </p>
 
         <p class="p_body">
@@ -62,7 +57,14 @@
             <br>
             Enter the Tokimon's name and select the one you wish to delete.
         </p>
-        <form action="/getIDDelete" method="POST">
+
+        <form action="/getIDUpdate" method="POST" autocomplete="off" class="update_form">
+            <input type="text" name="updateTokimon" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
+            <br> <br>
+            <input type="submit" value="Update Tokimon" class="buttons">
+        </form>
+        
+        <form action="/getIDDelete" method="POST" autocomplete="off">
             <input type="text" name="deleteTokimon" placeholder="Tokimon's Name" class="toki_input" onkeydown="uppercase(this)">
             <br> <br>
             <input type="submit" value="Delete Tokimon" class="buttons">
@@ -73,10 +75,33 @@
         </p>
 
         <p class="p_body">
-            Click on the following button to display all Tokimon currently in the database!
+            Click on the following button to display all Tokimon and information currently in the database!
         </p>
-        <form action="/display" method="GET">
+
+        <form action="/display" method="GET" autocomplete="off">
             <input type="submit" value="Display Tokimons" class="buttons">
+        </form>
+
+        <p class="p_body">
+            Click on the following button to display all Tokimon names and ID!
+            <br>
+            There will be links to click on to display all information on a specific Tokimon.
+        </p>
+
+        <form action="display_names" method="GET" autocomplete="off">
+            <input type="submit" value="Display Names/IDs" class="buttons">
+        </form>
+
+        <p class="p_header">
+            CLEAR DATABASE
+        </p>
+        <p class="p_body">
+            Click on the following button to clear the database and delete all Tokimons!
+            <br>
+            Keep in mind this cannot be undone.
+        </p>
+        <form action="/clear" method="POST" autocomplete="off">
+            <input type="submit" value="Clear Database" class="buttons">
         </form>
 
     </body>

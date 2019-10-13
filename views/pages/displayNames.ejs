@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Display Names and IDs </title>
+        <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <p class="p_header">
+            List of All Tokimon Names and IDs in Database Currently
+        </p>
+
+        <p class="p_body">
+            <ul>
+                <% resultRows.forEach((r) => { %>
+                    <a href='/link?id=<%= r.id %>'><li>
+                        <%= r.name %>
+                        <%= r.id %>
+                    </li></a>
+                <% }); %>
+            </ul>
+        </p>
+
+        <p class="p_body"> 
+                Press the button below to return to the main page. 
+        </p>
+        <button onclick="goBack()"> Main Page </button>
+    
+    </body>
+</html>

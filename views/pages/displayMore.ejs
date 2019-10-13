@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title> Display Specific Information </title>
+        <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <p class="p_header">
+            Information of the Specific Tokimon Clicked
+        </p>
+
+        <p class="p_body">
+            <ul>
+                <% resultRows.forEach((r) => { %>
+                    Name: <%= r.name %> <br>
+                    Weight: <%= r.weight %> <br>
+                    Height: <%= r.height %> <br>
+                    Fly: <%= r.fly %> <br>
+                    Fight: <%= r.fight %> <br>
+                    Fire: <%= r.fire %> <br>
+                    Water: <%= r.water %> <br>
+                    Electric: <%= r.electric %> <br>
+                    Ice: <%= r.ice %> <br>
+                    Total: <%= r.total %> <br>
+                    Trainer: <%= r.trainer_name %> <br>
+                    ID: <%= r.id %>
+                <% }); %>
+            </ul>
+        </p>
+
+        <p class="p_body"> 
+                Press the button below to return to the previous page. 
+        </p>
+        <button onclick="goBack()"> Previous Page </button>
+    
+    </body>
+</html>

@@ -24,10 +24,26 @@ tr,th,td{
     text-decoration: underline;
 }
 
+.update_header{
+    float: left;
+    padding-right: 500px;
+}
+
 .p_body{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+}
+
+.update_body{
+    float: left;
+    padding-right: 220px;
+    margin-top: 0px;
+}
+
+.update_form{
+    float: left;
+    padding-right: 600px;
 }
 
 .buttons{
