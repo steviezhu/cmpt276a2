@@ -6,7 +6,7 @@ var app = express();
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString: 'postgres://postgres:1234@localhost/tokimon_database'
+  connectionString: process.env.DATABASE_URL
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
