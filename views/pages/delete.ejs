@@ -1,20 +1,21 @@
 <html>
     <head>
-        <title> Insert </title>
+        <title> Deleted Tokimon </title>
         <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
         <script>
             function goBack(){
+                window.history.back();
                 window.history.back();
             }
         </script>
     </head>
     <body>
-        <p class="p_style">
-            Tokimon successfully inserted!
-            Inserted Tokimon Name: <%=nTokiName%>
+
+        <p class="p_body">
+            Tokimon has been deleted from the database.
         </p>
-        
-        <p class="p_style"> 
+
+        <p class="p_body"> 
             Press the button below to return to the main page. 
         </p>
         <button onclick="goBack()"> Main Page </button>

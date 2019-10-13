@@ -12,7 +12,14 @@ h1{
     height: 30px;
 }
 
-.p_style{
+.p_header{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.p_body{
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;

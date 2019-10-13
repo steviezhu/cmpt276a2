@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title> Update </title>
+        <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <p class="p_body">
+            Below are the attributes of the Tokimon by that ID.
+        </p>
+
+        <% results.forEach((r) => { %>
+            <p class="p_body">
+                Name: <%= r.name %> <br>
+                ID: <%= r.id %> <br>
+                Weight: <%= r.weight %> <br>
+                Height: <%= r.height %> <br>
+                Fly: <%= r.fly %> <br>
+                Fight: <%= r.fight %> <br>
+                Fire: <%= r.fire %> <br>
+                Water: <%= r.water %> <br>
+                Electric: <%= r.electric %> <br>
+                Ice: <%= r.ice %> <br>
+                Total: <%= r.total %> <br>
+                Trainer: <%= r.trainer_name %>
+            </p>
+        <% }); %>
+        <p class="p_body">
+            Please modify the fields you would like to change in the form below.
+            <br>
+            If you would not like to update an attribute, please enter the same value as above.
+        </p>
+
+        <form action="/updateValues" method="POST">
+            <input type="hidden" name="tokiID" value=<%=results[0].id%>>
+            <input type="text" name="tokiName" placeholder="Tokimon's Name" class="toki_input">
+            <input type="text" name="tokiWeight" placeholder="Tokimon's Weight" class="toki_input">
+            <input type="text" name="tokiHeight" placeholder="Tokimon's Height" class="toki_input">
+            <input type="text" name="tokiFly" placeholder="Fly Power" class="toki_input">
+            <input type="text" name="tokiFight" placeholder="Fight Power" class="toki_input">
+            <input type="text" name="tokiFire" placeholder="Fire Power" class="toki_input">
+            <input type="text" name="tokiWater" placeholder="Water Power" class="toki_input">
+            <input type="text" name="tokiElectric" placeholder="Electric Power" class="toki_input">
+            <input type="text" name="tokiIce" placeholder="Ice Power" class="toki_input">
+            <input type="text" name="tokiTrainer" placeholder="Trainer's Name" class="toki_input">
+            <br> <br>
+            <input type="submit" value="Update Tokimon" class="buttons">
+        </form>
+        <p class="p_body"> 
+            Press the button below to return to the previous page. 
+        </p>
+        <button onclick="goBack()"> Previous Page </button>
+
+    </body>
+</html>

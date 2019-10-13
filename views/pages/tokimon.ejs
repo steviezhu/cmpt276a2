@@ -6,12 +6,14 @@
 
     <body>
         <h1> TokiDex </h1>
-
-        <p class="p_style">
-        Use the following form to insert a new Tokimon into the database!
-        <br>
-        Keep in mind that if any of the numeric fields are left blank, they will default to 0.
-        If either name field is blank, they will stay blank in the database.
+        <p class="p_header">
+            INSERT TOKIMON
+        </p>
+        <p class="p_body">
+            Use the following form to insert a new Tokimon into the database!
+            <br>
+            Keep in mind that if any of the numeric fields are left blank, they will default to 0.
+            If either name field is blank, they will stay blank in the database.
         </p>
         <form action="/insert" method="POST">
             <input type="text" name="tokiName" placeholder="Tokimon's Name" class="toki_input">
@@ -28,11 +30,35 @@
             <input type="submit" value="Insert Tokimon" class="buttons">
         </form>
 
-        
-
-        <p class="p_style">
-            Use the following form to update an existing Tokimon's attributes! 
-            Leave the box empty if you would not like to update that attribute. (If the Tokimon doesn't exist, nothing will happen.)
+        <p class="p_header">
+            UPDATE TOKIMON
         </p>
+
+        <p class="p_body">
+            Use the following form to update an existing Tokimon's attributes!
+            <br>
+            Enter the Tokimon's name and select the one you wish to update.
+        </p>
+        <form action="/getIDUpdate" method="POST">
+            <input type="text" name="updateTokimon" placeholder="Tokimon's Name" class="toki_input">
+            <br> <br>
+            <input type="submit" value="Update Tokimon" class="buttons">
+        </form>
+
+        <p class="p_header">
+            DELETE TOKIMON
+        </p>
+
+        <p class="p_body">
+            Use the following form to delete an existing Tokimon!
+            <br>
+            Enter the Tokimon's name and select the one you wish to delete.
+        </p>
+        <form action="/getIDDelete" method="POST">
+            <input type="text" name="deleteTokimon" placeholder="Tokimon's Name" class="toki_input">
+            <br> <br>
+            <input type="submit" value="Delete Tokimon" class="buttons">
+        </form>
+
     </body>
 </html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> Insert </title>
+        <link href="stylesheets/a2style.css" rel="stylesheet" type="text/css">
+        <script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <p class="p_body">
+            Below are all Tokimon by that name, with their ID number next to them.
+        </p>
+
+        <% results.forEach((r) => { %>
+            <li>
+                Name:
+                <%= r.name %>
+                ID:
+                <%= r.id %>
+            </li>
+        <% }); %>
+
+        <p class="p_body">
+            Please enter the ID number of the Tokimon you would like to delete in the field below.
+        </p>
+
+        <form action="/delete" method="POST">
+            <input type="text" name="deleteID" placeholder="Tokimon's ID" class="toki_input">
+            <br> <br>
+            <input type="submit" value="Delete Tokimon" class="buttons">
+        </form>
+        <p class="p_body"> 
+            Press the button below to return to the main page. 
+        </p>
+        <button onclick="goBack()"> Main Page </button>
+
+    </body>
+</html>
