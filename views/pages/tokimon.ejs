@@ -92,6 +92,39 @@
             <input type="submit" value="Display Names/IDs" class="buttons">
         </form>
 
+        <p class="p_body">
+            Select a method to sort by and click the button to display all Tokimon in the database sorted by that attribute!
+        </p>
+
+        <form action="sort" method="POST">
+                <select name="sortBy">
+                    <option value="0"> Select... </option>
+                    <option value="ascName"> Ascending Name </option>
+                    <option value="dscName"> Descending Name </option>
+                    <option value="ascWeight"> Ascending Weight </option>
+                    <option value="dscWeight"> Descending Weight </option>
+                    <option value="ascHeight"> Ascending Height </option>
+                    <option value="dscHeight"> Descending Height </option>
+                    <option value="ascFly"> Ascending Fly </option>
+                    <option value="dscFly"> Descending Fly </option>
+                    <option value="ascFight"> Ascending Fight </option>
+                    <option value="dscFight"> Descending Fight </option>
+                    <option value="ascFire"> Ascending Fire </option>
+                    <option value="dscFire"> Descending Fire </option>
+                    <option value="ascWater"> Ascending Water </option>
+                    <option value="dscWater"> Descending Water </option>
+                    <option value="ascElectric"> Ascending Electric </option>
+                    <option value="dscElectric"> Descending Electric </option>
+                    <option value="ascIce"> Ascending Ice </option>
+                    <option value="dscIce"> Descending Ice </option>
+                    <option value="ascTotal"> Ascending Total </option>
+                    <option value="dscTotal"> Descending Total </option>
+                    <option value="ascTrainer"> Ascending Trainer's Name </option>
+                    <option value="dscTrainer"> Descending Trainer's Name </option>
+                </select>
+                <input type="submit" value="Display Sorted" class="buttons">
+            </form>
+
         <p class="p_header">
             CLEAR DATABASE
         </p>

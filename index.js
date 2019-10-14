@@ -267,4 +267,82 @@ app.get('/link', (req,res) => {
   })
 })
 
+app.post('/sort', (req,res) => {
+  var sortValue = req.body.sortBy;
+  if(sortValue == "ascName"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY name ASC;";
+  }
+  if(sortValue == "dscName"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY name DESC;";
+  }
+  if(sortValue == "ascWeight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY weight ASC;";
+  }
+  if(sortValue == "dscWeight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY weight DESC;";
+  }
+  if(sortValue == "ascHeight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY height ASC;";
+  }
+  if(sortValue == "dscHeight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY height DESC;";
+  }
+  if(sortValue == "ascFly"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fly ASC;";
+  }
+  if(sortValue == "dscFly"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fly DESC;";
+  }
+  if(sortValue == "ascFight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fight ASC;";
+  }
+  if(sortValue == "dscFight"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fight DESC;";
+  }
+  if(sortValue == "ascFire"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fire ASC;";
+  }
+  if(sortValue == "dscFire"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY fire DESC;";
+  }
+  if(sortValue == "ascWater"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY water ASC;";
+  }
+  if(sortValue == "dscWater"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY water DESC;";
+  }
+  if(sortValue == "ascElectric"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY electric ASC;";
+  }
+  if(sortValue == "dscElectric"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY electric DESC;";
+  }
+  if(sortValue == "ascIce"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY ice ASC;";
+  }
+  if(sortValue == "dscIce"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY ice DESC;";
+  }
+  if(sortValue == "ascTotal"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY total ASC;";
+  }
+  if(sortValue == "dscTotal"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY total DESC;";
+  }
+  if(sortValue == "ascTrainer"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY trainer_name ASC;";
+  }
+  if(sortValue == "dscTrainer"){
+    var sortQuery = "SELECT * FROM tokimon_table ORDER BY trainer_name DESC;";
+  }
+  pool.query(sortQuery, (error,result) => {
+    if(error){
+      res.end(error);
+    }
+    var resultRows = result.rows;
+    res.render('pages/display', {resultRows});
+  })
+})
+
+
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

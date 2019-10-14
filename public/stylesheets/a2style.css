@@ -10,6 +10,7 @@ h1{
 tr,th,td{
     border-collapse: collapse;
     border: 2px solid black;
+    padding: 4px;
 }
 
 .toki_input{
@@ -54,4 +55,5 @@ tr,th,td{
 .display_table{
     border-collapse: collapse;
     border: 2px solid black;
+    padding: 4px;
 }
