@@ -12,8 +12,15 @@
         }
     </script>
 
+    <title>
+        Tokimon Database
+    </title>
+
     <body>
-        <h1> TokiDex </h1>
+        <h1> TokiManager </h1>
+        <h2>
+            Welcome to your personal Tokimon manager, where you can insert, update, display and delete Tokimons to make your life as a trainer easier!
+        </h2>
         <p class="p_header">
             INSERT TOKIMON
         </p>
@@ -70,16 +77,30 @@
             <input type="submit" value="Delete Tokimon" class="buttons">
         </form>
 
-        <p class="p_header">
+        <p class="display_header p_header">
             DISPLAY TOKIMONS
         </p>
 
-        <p class="p_body">
+        <p class="p_header">
+            CLEAR DATABASE
+        </p>
+
+        <p class="display_body p_body">
             Click on the following button to display all Tokimon and information currently in the database!
         </p>
 
-        <form action="/display" method="GET" autocomplete="off">
+        <p class="p_body">
+            Click on the following button to clear the database and delete all Tokimons!
+            <br>
+            Keep in mind this cannot be undone.
+        </p>
+
+        <form action="/display" method="GET" autocomplete="off" class="display_form">
             <input type="submit" value="Display Tokimons" class="buttons">
+        </form>
+
+        <form action="/clear" method="POST" autocomplete="off">
+            <input type="submit" value="Clear Database" class="buttons">
         </form>
 
         <p class="p_body">
@@ -98,7 +119,6 @@
 
         <form action="sort" method="POST">
                 <select name="sortBy">
-                    <option value="0"> Select... </option>
                     <option value="ascName"> Ascending Name </option>
                     <option value="dscName"> Descending Name </option>
                     <option value="ascWeight"> Ascending Weight </option>
@@ -124,18 +144,6 @@
                 </select>
                 <input type="submit" value="Display Sorted" class="buttons">
             </form>
-
-        <p class="p_header">
-            CLEAR DATABASE
-        </p>
-        <p class="p_body">
-            Click on the following button to clear the database and delete all Tokimons!
-            <br>
-            Keep in mind this cannot be undone.
-        </p>
-        <form action="/clear" method="POST" autocomplete="off">
-            <input type="submit" value="Clear Database" class="buttons">
-        </form>
 
     </body>
 </html>

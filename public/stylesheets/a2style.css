@@ -7,6 +7,12 @@ h1{
     text-align: center;
 }
 
+h2{
+    text-align: center;
+    font-size: 24px;
+    color: darkslategray;
+}
+
 tr,th,td{
     border-collapse: collapse;
     border: 2px solid black;
@@ -27,7 +33,12 @@ tr,th,td{
 
 .update_header{
     float: left;
-    padding-right: 500px;
+    padding-right: 600px;
+}
+
+.display_header{
+    float: left; 
+    padding-right: 580px;
 }
 
 .p_body{
@@ -38,13 +49,24 @@ tr,th,td{
 
 .update_body{
     float: left;
-    padding-right: 220px;
+    padding-right: 320px;
+    margin-top: 0px;
+}
+
+.display_body{
+    float: left;
+    padding-right: 95px;
     margin-top: 0px;
 }
 
 .update_form{
     float: left;
-    padding-right: 600px;
+    padding-right: 700px;
+}
+
+.display_form{
+    float: left;
+    padding-right: 695px;
 }
 
 .buttons{
